@@ -1,0 +1,39 @@
+<div class="container mt-5">
+  <%= form_for :client, url: create_client_path, html: {id: 'clientForm'} do |f| %>
+    <div class="form-group">
+      <label for="user_name">User Name</label>
+      <input type="text" class="form-control required" id="user_name" name="user_name">
+    </div>
+    <div class="form-group">
+      <label for="email">Email address</label>
+      <input type="email" class="form-control required" id="email" name="email">
+      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    </div>
+    <div class="form-group">
+      <label for="homepage">Homepage</label>
+      <input type="url" class="form-control" id="homepage" name="homepage">
+    </div>
+    <div class="form-group">
+      <label for="message">Text</label>
+      <textarea class="form-control required" id="message" rows="3" name="message"></textarea>
+    </div>
+   
+  <% end %>
+  <div class="captcha-chat">
+
+    <div id="captcha">
+      <div class="controls">
+        <input class="user-text btn-common required" placeholder="Type here" type="text">
+
+        <button class="refresh btn-common">
+          <!-- this image should be converted into inline svg -->
+          <%= image_tag 'refresh_icon.png', width: 20 %>
+        </button>
+      </div>
+      <div id="captchaError"></div>
+      <button class="validate btn btn-primary mt-3">Submit</button>
+    </div>
+  </div>
+
+</div>
+ 
